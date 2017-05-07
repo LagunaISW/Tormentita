@@ -72,7 +72,7 @@ public class HourAdapter extends RecyclerView.Adapter<HourAdapter.HourViewHolder
             String time = mTimeLabel.getText().toString();
             String temp = mTemperatureLabel.getText().toString();
             String summary = mSummaryLabel.getText().toString();
-            String message = String.format("A las %s el cima sera %s y %s.",
+            String message = String.format("A las %s el clima sera %s y %s.",
                     time,
                     temp,
                     summary);
