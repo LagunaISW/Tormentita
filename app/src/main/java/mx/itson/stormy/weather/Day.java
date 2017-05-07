@@ -13,6 +13,7 @@ import java.util.TimeZone;
 public class Day implements Parcelable {
     private long mTime;
     private String mSummary;
+    private double mTemperatureMin;
     private double mTemperatureMax;
     private String mIcon;
     private String mTimezone;
@@ -35,6 +36,14 @@ public class Day implements Parcelable {
 
     public void setSummary(String summary) {
         mSummary = summary;
+    }
+
+    public int getTemperatureMin() {
+        return (int) Math.round(mTemperatureMin);
+    }
+
+    public void setTemperatureMin(double temperatureMin) {
+        mTemperatureMin = temperatureMin;
     }
 
     public int getTemperatureMax() {
@@ -81,6 +90,7 @@ public class Day implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(mTime);
         dest.writeString(mSummary);
+        dest.writeDouble(mTemperatureMin);
         dest.writeDouble(mTemperatureMax);
         dest.writeString(mIcon);
         dest.writeString(mTimezone);
@@ -91,6 +101,7 @@ public class Day implements Parcelable {
         mTime = in.readLong();
         mSummary = in.readString();
         mTemperatureMax = in.readDouble();
+        mTemperatureMin = in.readDouble();
         mIcon = in.readString();
         mTimezone = in.readString();
     }

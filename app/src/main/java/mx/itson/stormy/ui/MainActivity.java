@@ -189,7 +189,7 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
 
                 if (addresses.size() > 0) {
                     Address address = addresses.get(0);
-                    cityName = address.getLocality(); // + ", " + address.getAdminArea();
+                    cityName = address.getLocality();
                 }
             } catch (IOException e) {
                 e.printStackTrace();

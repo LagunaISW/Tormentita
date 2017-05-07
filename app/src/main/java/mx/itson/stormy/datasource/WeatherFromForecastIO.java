@@ -69,6 +69,7 @@ public class WeatherFromForecastIO extends WeatherSource {
             day.setTime(jsonDay.getLong("time"));
             day.setIcon(jsonDay.getString("icon"));
             day.setTemperatureMax(jsonDay.getDouble("temperatureMax"));
+            day.setTemperatureMax(jsonDay.getDouble("temperatureMin"));
             day.setTimezone(timezone);
 
             days[i] = day;
@@ -97,6 +98,7 @@ public class WeatherFromForecastIO extends WeatherSource {
             hour.setTime(jsonHour.getLong("time"));
             hour.setIcon(jsonHour.getString("icon"));
             hour.setTemperature(jsonHour.getDouble("temperature"));
+            hour.setTemperatureMin(jsonHour.getDouble("temperature") - 3);
             hour.setTimezone(timezone);
 
             hours[i] = hour;
@@ -123,6 +125,8 @@ public class WeatherFromForecastIO extends WeatherSource {
         current.setPrecipChance(currently.getDouble("precipProbability"));
         current.setSummary(currently.getString("summary"));
         current.setTemperature(currently.getDouble("temperature"));
+        current.setTemperatureMin(currently.getDouble("temperature") - 3);
+        current.setWindBearing(currently.getDouble("windBearing"));
         current.setTimeZone(timezone);
 
         return current;

@@ -14,6 +14,7 @@ public class Hour implements Parcelable {
     private long mTime;
     private String mSummary;
     private double mTemperature;
+    private double mTemperatureMin;
     private String mIcon;
     private String mTimezone;
 
@@ -48,8 +49,16 @@ public class Hour implements Parcelable {
         return (int) Math.round(mTemperature);
     }
 
+    public int getTemperatureMin() {
+        return (int) Math.round(mTemperatureMin);
+    }
+
     public void setTemperature(double temperature) {
         mTemperature = temperature;
+    }
+
+    public void setTemperatureMin(double temperature) {
+        mTemperatureMin = temperature;
     }
 
     public String getIcon() {
