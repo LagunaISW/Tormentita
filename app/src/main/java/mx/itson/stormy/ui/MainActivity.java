@@ -77,6 +77,7 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
         super.onResume();
 
         //start location service
+
         SmartLocation
                 .with(this)
                 .location()
@@ -121,7 +122,7 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
     public void updateDisplay() {
         Current current = mForecast.getCurrent();
         mTemperatureLabel.setText(current.getTemperature() + "");
-        mTimeLabel.setText("At " + current.getFormatedTime() + " it will be");
+        mTimeLabel.setText("A las " + current.getFormatedTime() + " hace ");
         mHumidityValue.setText(current.getHumidity() + "%");
         mPrecipValue.setText(current.getPrecipChance() + "%");
         mSummaryLabel.setText(current.getSummary());
@@ -180,7 +181,7 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
      */
     public String getLocationName(double latitude, double longitude) {
 
-        String cityName = "Not Found";
+        String cityName = getString(R.string.unknow_city);
         if (Geocoder.isPresent()) {
             Geocoder geocoder = new Geocoder(getBaseContext(), Locale.getDefault());
             try {
@@ -194,7 +195,7 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
                 e.printStackTrace();
             }
         } else {
-            cityName = "Not Available";
+            cityName = getString(R.string.unreachable_city);
         }
         return cityName;
     }

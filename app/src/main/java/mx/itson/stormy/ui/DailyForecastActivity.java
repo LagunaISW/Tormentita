@@ -49,7 +49,7 @@ public class DailyForecastActivity extends Activity {
                 String dayOfTheWeek = mDays[position].getDayOfTheWeek();
                 String conditions = mDays[position].getSummary();
                 String highTemp = mDays[position].getTemperatureMax() + "";
-                String message = String.format("On %s the high will be %s and it will be %s",
+                String message = String.format("El %s la temp maxima sera %s y estara %s",
                         dayOfTheWeek, highTemp, conditions);
 
                 Toast.makeText(DailyForecastActivity.this, message, Toast.LENGTH_LONG).show();
