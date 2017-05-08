@@ -118,15 +118,19 @@ public class WeatherFromForecastIO extends WeatherSource {
         String timezone = forecast.getString("timezone");
 
         JSONObject currently = forecast.getJSONObject("currently");
+        JSONArray extraData = forecast.getJSONObject("daily").getJSONArray("data");
+
         Current current = new Current();
         current.setHumidity(currently.getDouble("humidity"));
-        current.setTime(currently.getLong("time"));
         current.setIcon(currently.getString("icon"));
         current.setPrecipChance(currently.getDouble("precipProbability"));
         current.setSummary(currently.getString("summary"));
         current.setTemperature(currently.getDouble("temperature"));
-        current.setTemperatureMin(currently.getDouble("temperature") - 3);
+        current.setTemperatureMin(extraData.getJSONObject(0).getDouble("temperatureMin"));
+        current.setTemperatureMax(extraData.getJSONObject(0).getDouble("temperatureMax"));
         current.setWindBearing(currently.getDouble("windBearing"));
+        current.setSunrise(extraData.getJSONObject(0).getLong("sunriseTime"));
+        current.setSunset(extraData.getJSONObject(0).getLong("sunsetTime"));
         current.setTimeZone(timezone);
 
         return current;

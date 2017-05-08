@@ -12,10 +12,13 @@ public class Current {
     private long mTime;
     private double mTemperature;
     private double mTemperatureMin;
+    private double mTemperatureMax;
     private double mHumidity;
     private double mPrecipChance;
     private String mwindBearing;
     private String mSummary;
+    private long mSunrise;
+    private long mSunset;
 
     public String getTimeZone() {
         return mTimeZone;
@@ -109,6 +112,22 @@ public class Current {
         return formatter.format(dateTime);
     }
 
+    public String getFormatedSunriseTime() {
+        SimpleDateFormat formatter = new SimpleDateFormat("h:mm a");
+        formatter.setTimeZone(TimeZone.getTimeZone(mTimeZone));
+        Date dateTime = new Date(getSunrise() * 1000);
+
+        return formatter.format(dateTime);
+    }
+
+    public String getFormatedSunsetTime() {
+        SimpleDateFormat formatter = new SimpleDateFormat("h:mm a");
+        formatter.setTimeZone(TimeZone.getTimeZone(mTimeZone));
+        Date dateTime = new Date(getSunset() * 1000);
+
+        return formatter.format(dateTime);
+    }
+
     public void setIcon(String icon) {
         mIcon = icon;
     }
@@ -117,8 +136,24 @@ public class Current {
         return mTime;
     }
 
+    public long getSunrise() {
+        return mSunrise;
+    }
+
+    public long getSunset() {
+        return mSunset;
+    }
+
     public void setTime(long time) {
         mTime = time;
+    }
+
+    public void setSunrise(long time) {
+        mSunrise = time;
+    }
+
+    public void setSunset(long time) {
+        mSunset = time;
     }
 
     public int getTemperature() {
@@ -129,12 +164,20 @@ public class Current {
         return (int) Math.round(mTemperatureMin);
     }
 
+    public int getTemperatureMax() {
+        return (int) Math.round(mTemperatureMax);
+    }
+
     public void setTemperature(double temperature) {
         mTemperature = temperature;
     }
 
     public void setTemperatureMin(double temperature) {
         mTemperatureMin = temperature;
+    }
+
+    public void setTemperatureMax(double temperature) {
+        mTemperatureMax = temperature;
     }
 
     public int getHumidity() {
