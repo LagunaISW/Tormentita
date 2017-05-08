@@ -69,7 +69,7 @@ public class WeatherFromForecastIO extends WeatherSource {
             day.setTime(jsonDay.getLong("time"));
             day.setIcon(jsonDay.getString("icon"));
             day.setTemperatureMax(jsonDay.getDouble("temperatureMax"));
-            day.setTemperatureMax(jsonDay.getDouble("temperatureMin"));
+            day.setTemperatureMin(jsonDay.getDouble("temperatureMin"));
             day.setTimezone(timezone);
 
             days[i] = day;

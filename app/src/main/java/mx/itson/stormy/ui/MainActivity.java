@@ -44,8 +44,6 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
     private Forecast mForecast;
     @InjectView(R.id.locationLabel)
     TextView mLocationLabel;
-    @InjectView(R.id.timeLabel)
-    TextView mTimeLabel;
     @InjectView(R.id.temperatureLabel)
     TextView mTemperatureLabel;
     @InjectView(R.id.humidityValue)
@@ -60,6 +58,17 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
     ImageView mRefreshImageView;
     @InjectView(R.id.progressBar)
     ProgressBar mProgressBar;
+    @InjectView(R.id.minTempValue)
+    TextView mMinTemp;
+    @InjectView(R.id.maxTempValue)
+    TextView mMaxTemp;
+    @InjectView(R.id.windValue)
+    TextView mWindeValue;
+    @InjectView(R.id.sunriseValue)
+    TextView mSunrise;
+    @InjectView(R.id.sunsetValue)
+    TextView mSunset;
+
     private double mLatitude = 27.9147934;
     private double mLongitude = -110.9430215;
     private String mLocationName = "Guaymas";
@@ -122,10 +131,14 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
     public void updateDisplay() {
         Current current = mForecast.getCurrent();
         mTemperatureLabel.setText(current.getTemperature() + "");
-        mTimeLabel.setText("A las " + current.getFormatedTime() + " hace ");
         mHumidityValue.setText(current.getHumidity() + "%");
         mPrecipValue.setText(current.getPrecipChance() + "%");
         mSummaryLabel.setText(current.getSummary());
+        mMinTemp.setText(current.getTemperatureMin() + "°");
+        mMaxTemp.setText(current.getTemperatureMax() + "°");
+        mWindeValue.setText(current.getWindBearing());
+        mSunrise.setText(current.getFormatedSunriseTime() + "");
+        mSunset.setText(current.getFormatedSunsetTime() + "");
         Drawable drawable = getResources().getDrawable((int) current.getIconId());
         mIconImageView.setImageDrawable(drawable);
     }

@@ -15,7 +15,7 @@ public class Current {
     private double mTemperatureMax;
     private double mHumidity;
     private double mPrecipChance;
-    private String mwindBearing;
+    private String mWindBearing;
     private String mSummary;
     private long mSunrise;
     private long mSunset;
@@ -40,57 +40,57 @@ public class Current {
 
 
     public String getWindBearing() {
-        return mwindBearing;
+        return mWindBearing;
     }
 
     public void setWindBearing(double windBearing) {
         if (348.75 < windBearing && windBearing > 11.25) {
-            this.mwindBearing = "N";
+            this.mWindBearing = "N";
         }
         if (11.25 < windBearing && windBearing > 33.75) {
-            this.mwindBearing = "NNE";
+            this.mWindBearing = "NNE";
         }
         if (56.25 < windBearing && windBearing > 78.75) {
-            this.mwindBearing = "NE";
+            this.mWindBearing = "NE";
         }
         if (33.75 < windBearing && windBearing > 56.25) {
-            this.mwindBearing = "ENE";
+            this.mWindBearing = "ENE";
         }
         if (78.75 < windBearing && windBearing > 101.25) {
-            this.mwindBearing = "E";
+            this.mWindBearing = "E";
         }
         if (101.25 < windBearing && windBearing > 123.75) {
-            this.mwindBearing = "ESE";
+            this.mWindBearing = "ESE";
         }
         if (123.75 < windBearing && windBearing > 146.25) {
-            this.mwindBearing = "SE";
+            this.mWindBearing = "SE";
         }
         if (146.25 < windBearing && windBearing > 168.75) {
-            this.mwindBearing = "SSE";
+            this.mWindBearing = "SSE";
         }
         if (168.75 < windBearing && windBearing > 191.25) {
-            this.mwindBearing = "S";
+            this.mWindBearing = "S";
         }
         if (191.25 < windBearing && windBearing > 213.75) {
-            this.mwindBearing = "SSO";
+            this.mWindBearing = "SSO";
         }
         if (213.75 < windBearing && windBearing > 236.25) {
-            this.mwindBearing = "SO";
+            this.mWindBearing = "SO";
         }
         if (236.25 < windBearing && windBearing > 258.75) {
-            this.mwindBearing = "OSO";
+            this.mWindBearing = "OSO";
         }
         if (258.75 < windBearing && windBearing > 281.25) {
-            this.mwindBearing = "O";
+            this.mWindBearing = "O";
         }
         if (281.25 < windBearing && windBearing > 303.75) {
-            this.mwindBearing = "ONO";
+            this.mWindBearing = "ONO";
         }
         if (303.75 < windBearing && windBearing > 326.25) {
-            this.mwindBearing = "NO";
+            this.mWindBearing = "NO";
         }
         if (326.25 < windBearing && windBearing > 348.75) {
-            this.mwindBearing = "NNO";
+            this.mWindBearing = "NNO";
         }
 
     }

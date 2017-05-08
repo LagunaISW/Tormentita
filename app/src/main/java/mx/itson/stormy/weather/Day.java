@@ -90,8 +90,8 @@ public class Day implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(mTime);
         dest.writeString(mSummary);
-        dest.writeDouble(mTemperatureMin);
         dest.writeDouble(mTemperatureMax);
+        dest.writeDouble(mTemperatureMin);
         dest.writeString(mIcon);
         dest.writeString(mTimezone);
 

@@ -24,4 +24,10 @@
     <string name="content_desc_degree_sign">grados</string>
     <string name="unknow_city">Desconocida</string>
     <string name="unreachable_city">No disponible</string>
+    <string name="label_minTemp">Minima</string>
+    <string name="label_maxTemp">Maxima</string>
+    <string name="label_wind">Viento</string>
+    <string name="label_sunrise">Amanecer</string>
+    <string name="label_sunset">Atardecer</string>
+    <string name="timeValue">Ahora</string>
 </resources>
