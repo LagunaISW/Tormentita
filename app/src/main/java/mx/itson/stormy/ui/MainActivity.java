@@ -72,6 +72,7 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
     private double mLatitude = 27.9147934;
     private double mLongitude = -110.9430215;
     private String mLocationName = "Guaymas";
+    private int mCity = 0;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,11 +151,23 @@ public class MainActivity extends ActionBarActivity implements WeatherSourceCall
 
     @OnClick(R.id.refreshImageView)
     public void refreshForecast(View v) {
-        mLocationLabel.setText(mLocationName);
+
 
         if (isNetworkAvailable()) {
             toggleRefresh();
-            mWeatherSource.getForecast(mLatitude, mLongitude);
+            if (mCity == 0) {
+                mWeatherSource.getForecast(mLatitude, mLongitude);
+                mLocationLabel.setText(mLocationName);
+                mCity = 1;
+            } else if (mCity == 1) {
+                mWeatherSource.getForecast(19.3906797, -99.284042);
+                mLocationLabel.setText("CDMX");
+                mCity = 2;
+            } else if (mCity == 2) {
+                mWeatherSource.getForecast(20.6737776, -103.4056252);
+                mLocationLabel.setText("Guadalajara");
+                mCity = 0;
+            }
         } else {
             Toast.makeText(this, getString(R.string.network_unavailable), Toast.LENGTH_LONG).show();
         }
