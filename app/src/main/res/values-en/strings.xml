@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="action_settings">Options</string>
+    <string name="error_title">Oops! Something went wrong!</string>
+    <string name="error_message">There was a mistake. Try again</string>
+    <string name="error_ok_button">OK</string>
+    <string name="network_unavailable">You dont have Internet!</string>
+    <string name="title_activity_daily_forecast_activtiy">Weather Day</string>
+    <string name="no_daily_forecast_data">Nothing to show:/</string>
+    <string name="title_activity_hourly_forecast">Weather Hour</string>
+    <string name="loading_forecast">Getting information from weather</string>
+    <string name="no_location">Searching…</string>
+    <string name="temperature_loading">---</string>
+    <string name="time_loading">…</string>
+    <string name="percent_loading">--%</string>
+    <string name="label_hourly">Per hour</string>
+    <string name="label_daily">Per day</string>
+    <string name="label_humidity">Humidity</string>
+    <string name="label_precip_chance">Precipitation</string>
+    <string name="daily_forecast_title">This week</string>
+    <string name="hardcoded_location_label">Guaymas, Son</string>
+    <string name="content_desc_refresh">Update Button</string>
+    <string name="content_desc_degree_sign">degrees</string>
+    <string name="unknow_city">Unknown</string>
+    <string name="unreachable_city">Not available</string>
+    <string name="label_minTemp">Minimum</string>
+    <string name="label_maxTemp">Maximum</string>
+    <string name="label_wind">Wind</string>
+    <string name="label_sunrise">Sunrise</string>
+    <string name="label_sunset">Sunset</string>
+    <string name="timeValue">Now</string>
+
+
+</resources>
